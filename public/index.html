@@ -1,0 +1,31 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+  <head><title>Dummy Login Page</title></head>
+  <body>
+    <h1>Login</h1>
+    <form id="login-form">
+      <input id="username" type="text" placeholder="Username" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+    </form>
+
+    <div id="dashboard" style="display: none;">
+      <h2>Welcome to the Dashboard!</h2>
+    </div>
+
+    <script>
+      document.getElementById('login-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === 'admin' && password === 'password123') {
+          document.getElementById('dashboard').style.display = 'block';
+        } else {
+          alert('Invalid credentials');
+        }
+      });
+    </script>
+  </body>
+</html>
